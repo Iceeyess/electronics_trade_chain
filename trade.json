@@ -1,0 +1,134 @@
+[
+{
+  "model": "trade.contact",
+  "pk": 1,
+  "fields": {
+    "email": "test1@test.ru",
+    "country": "РФ",
+    "city": "Москва",
+    "street": "Лесная",
+    "house": "1"
+  }
+},
+{
+  "model": "trade.contact",
+  "pk": 2,
+  "fields": {
+    "email": "test2@test.ru",
+    "country": "РФ",
+    "city": "Санкт-Петербург",
+    "street": "Новочеркасский бульвар",
+    "house": "123"
+  }
+},
+{
+  "model": "trade.contact",
+  "pk": 3,
+  "fields": {
+    "email": "test3@test.ru",
+    "country": "РФ",
+    "city": "Казань",
+    "street": "Мусы-Джалиля",
+    "house": "1"
+  }
+},
+{
+  "model": "trade.product",
+  "pk": 1,
+  "fields": {
+    "name": "Телевизор",
+    "brand": "Sony",
+    "product_model": "01",
+    "release_date": "1999-12-11",
+    "trade_company": 1
+  }
+},
+{
+  "model": "trade.product",
+  "pk": 2,
+  "fields": {
+    "name": "Телевизор",
+    "brand": "Sony",
+    "product_model": "02",
+    "release_date": "2000-12-11",
+    "trade_company": 1
+  }
+},
+{
+  "model": "trade.product",
+  "pk": 3,
+  "fields": {
+    "name": "Телевизор",
+    "brand": "Sony",
+    "product_model": "03",
+    "release_date": "2001-12-11",
+    "trade_company": 1
+  }
+},
+{
+  "model": "trade.product",
+  "pk": 4,
+  "fields": {
+    "name": "Телевизор",
+    "brand": "Sony",
+    "product_model": "04",
+    "release_date": "2002-12-11",
+    "trade_company": 1
+  }
+},
+{
+  "model": "trade.product",
+  "pk": 5,
+  "fields": {
+    "name": "Плеер",
+    "brand": "Sony",
+    "product_model": "X01",
+    "release_date": "2024-11-11",
+    "trade_company": 2
+  }
+},
+{
+  "model": "trade.product",
+  "pk": 6,
+  "fields": {
+    "name": "Плеер",
+    "brand": "Sony",
+    "product_model": "X02",
+    "release_date": "2024-12-11",
+    "trade_company": 2
+  }
+},
+{
+  "model": "trade.tradecompany",
+  "pk": 1,
+  "fields": {
+    "name": "Дистрибьютор Sony",
+    "contact": 1,
+    "supplier": null,
+    "supplier_ending_balance": 0.0,
+    "creation_date": "22:05:50.359"
+  }
+},
+{
+  "model": "trade.tradecompany",
+  "pk": 2,
+  "fields": {
+    "name": "М Видео",
+    "contact": 2,
+    "supplier": 1,
+    "supplier_ending_balance": 1.0,
+    "creation_date": "22:14:58.653"
+  }
+},
+{
+  "model": "trade.tradecompany",
+  "pk": 3,
+  "fields": {
+    "name": "Эльдорадо",
+    "contact": 3,
+    "supplier": 2,
+    "supplier_ending_balance": 4.12,
+    "creation_date": "22:30:11.282"
+  }
+}
+]
