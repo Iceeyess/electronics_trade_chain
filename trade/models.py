@@ -47,7 +47,6 @@ class TradeCompany(models.Model):
     creation_date = models.TimeField(auto_now_add=True, verbose_name='дата создания')
 
     def clean(self):
-        print(str(self.supplier_ending_balance))
         if self.supplier_ending_balance < 0:
             raise ValidationError('Задолженность не может быть отрицательной.')
         if self.supplier == self:
