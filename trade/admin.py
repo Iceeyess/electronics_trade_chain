@@ -20,7 +20,8 @@ class AdminProduct(admin.ModelAdmin):
 
 @admin.register(TradeCompany)
 class AdminTradeCompany(admin.ModelAdmin):
-    list_display = ('supplier__name', )
+    list_display = ('name', 'supplier__name', 'supplier_ending_balance')
+    list_display_links = ('supplier__name', )
     list_filter = ('contact__city', )
     ordering = ('name', )
     actions = ('set_null_to_ending_balance', )
@@ -29,3 +30,5 @@ class AdminTradeCompany(admin.ModelAdmin):
     def set_null_to_ending_balance(self, request, queryset):
         queryset.update(supplier_ending_balance=0)
         self.message_user(request, "Задолженности перед поставщиками успешно обнулены.")
+
+
