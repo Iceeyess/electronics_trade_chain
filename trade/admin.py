@@ -20,7 +20,7 @@ class AdminProduct(admin.ModelAdmin):
 
 @admin.register(TradeCompany)
 class AdminTradeCompany(admin.ModelAdmin):
-    list_display = ('name', 'supplier__name', 'supplier_ending_balance')
+    list_display = ('pk', 'name', 'supplier__name', 'supplier_ending_balance')
     list_display_links = ('supplier__name', )
     list_filter = ('contact__city', )
     ordering = ('name', )
