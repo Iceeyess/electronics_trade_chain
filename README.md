@@ -94,4 +94,9 @@ https://djoser.readthedocs.io/en/latest/base_endpoints.html#user-create
 python3 manage.py loaddata trade.json
 
 
-
+Для того, чтобы войти в админку, необходимо:
+1) создать пользователя.
+URL:
+http://localhost:8000/api/v1/auth/users/
+2) Наделить его полномочиями суперпользователя.
+Можно через БД, поставить true для полей: is_superuser, is_staff, is_active.
