@@ -20,7 +20,6 @@ from django.urls import path, include, re_path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('trade/', include('trade.urls', namespace='trade')),
-    path('users/', include('users.urls', namespace='users')),
     re_path('api/v1/auth/', include('djoser.urls')),
     re_path(r'^auth/', include('djoser.urls.authtoken')),
 ]
