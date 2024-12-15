@@ -44,7 +44,7 @@ class TradeCompany(models.Model):
     contact = models.ForeignKey(Contact, on_delete=models.SET_NULL, verbose_name='ссылка на контакты', **NULLABLE)
     supplier = models.ForeignKey('self', on_delete=models.SET_NULL, verbose_name='поставщик', **NULLABLE)
     supplier_ending_balance = models.FloatField(default=0, verbose_name='задолженность перед поставщиком')
-    creation_date = models.TimeField(auto_now_add=True, verbose_name='дата создания')
+    creation_time = models.TimeField(auto_now_add=True, verbose_name='время создания')
 
     def clean(self):
         if self.supplier_ending_balance < 0:

@@ -106,7 +106,7 @@
     "contact": 1,
     "supplier": null,
     "supplier_ending_balance": 0.0,
-    "creation_date": "22:05:50.359"
+    "creation_time": "22:05:50.359"
   }
 },
 {
@@ -117,7 +117,7 @@
     "contact": 2,
     "supplier": 1,
     "supplier_ending_balance": 1.0,
-    "creation_date": "22:14:58.653"
+    "creation_time": "22:14:58.653"
   }
 },
 {
@@ -128,7 +128,7 @@
     "contact": 3,
     "supplier": 2,
     "supplier_ending_balance": 4.12,
-    "creation_date": "22:30:11.282"
+    "creation_time": "22:30:11.282"
   }
 }
 ]

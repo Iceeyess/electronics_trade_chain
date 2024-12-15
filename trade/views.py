@@ -8,7 +8,7 @@ from .permissions import IsActive
 
 # Create your views here.
 class TradeCompanyModelViewSet(viewsets.ModelViewSet):
-    queryset = TradeCompany
+    queryset = TradeCompany.objects.all()
     serializer_class = TradeCompanySerializer
     permission_classes = (IsActive, )
 
