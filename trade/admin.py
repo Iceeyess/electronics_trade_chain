@@ -3,7 +3,8 @@ from django.contrib import admin
 from trade.models import TradeCompany, Contact, Product
 
 # Register your models here.
-admin.site.header = 'Админка'
+admin.site.site_header = 'Управление поставщиками'
+
 
 @admin.register(Contact)
 class AdminContact(admin.ModelAdmin):
