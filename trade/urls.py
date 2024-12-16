@@ -1,6 +1,5 @@
 from trade import views
 from trade.apps import TradeConfig
-from trade.models import TradeCompany
 from rest_framework.routers import DefaultRouter
 from django.urls import path
 

@@ -6,4 +6,4 @@ class CrossOffSupplierEndingBalance:
     Ответ сервера будет кастомный"""
     def __call__(self, value):
         if value is not None:
-            raise ValidationError(f"Нельзя создавать данные с остатками взаиморасчетов")
+            raise ValidationError("Нельзя создавать данные с остатками взаиморасчетов")

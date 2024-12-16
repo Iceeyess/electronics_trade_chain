@@ -31,5 +31,3 @@ class AdminTradeCompany(admin.ModelAdmin):
     def set_null_to_ending_balance(self, request, queryset):
         queryset.update(supplier_ending_balance=0)
         self.message_user(request, "Задолженности перед поставщиками успешно обнулены.")
-
-

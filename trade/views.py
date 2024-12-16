@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import viewsets, generics
 from rest_framework.filters import SearchFilter
 from trade.models import TradeCompany
@@ -11,6 +10,7 @@ class TradeCompanyModelViewSet(viewsets.ModelViewSet):
     queryset = TradeCompany.objects.all()
     serializer_class = TradeCompanySerializer
     permission_classes = (IsActive, )
+
 
 class TradeFilterListView(generics.ListAPIView):
     queryset = TradeCompany.objects.all()
