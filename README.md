@@ -96,8 +96,59 @@ python3 manage.py loaddata trade.json
 
 
 Для того, чтобы войти в админку, необходимо:
-1) создать пользователя.
+
+1) Создать пользователя.
 URL:
 http://localhost:8000/api/v1/auth/users/
-2) Наделить его полномочиями суперпользователя.
+
+2) Можете пропустить пункт и, сразу же пойти в пункт 3, но, можно активировать аккаунт пользователя посредством 
+встроенных djoser API.
+Сразу же, после успешного выполнения, найдите папку sending_email_log, в ней будет файл, например 
+20241216-183832-124031847424240.log , в нем будет ссылка активации с uid, и token. Пример ссылки:
+http://localhost:8000/#/activate/MQ/ci5548-a53c0d31c6b1c2fad85232a74ed2cd16 . 
+uid: MQ
+token: ci5548-a53c0d31c6b1c2fad85232a74ed2cd16
+Затем необходимо пройти по ссылке http://localhost:8000/api/v1/auth/users/activation/ с методом POST:
+с параметрами в теле запроса:
+uid: MQ
+token: ci5548-a53c0d31c6b1c2fad85232a74ed2cd16
+Проверьте в БД, поле is_active должно стать true.
+
+Ссылка получения токена:
+http://localhost:8000/auth/token/login
+Метод: POST
+{
+    "password": "sample",
+    "username": "sample"
+}
+, где sample - ваши данные.
+
+Пройдите по ссылке API с методом PATCH:
+http://localhost:8000/api/v1/auth/users/me/
+{
+    "is_staff": true
+}
+Добавьте в headers:
+- Authorization
+- Token 1d2904e355beced1507327fc288522ba9414c213
+Номер токена получите собственный, выше токен для примера.
+
+Суперпользователя можете уже либо изменить через ORM запросы в python.manage.py shell, либо в самой БД.
+
+Например, в ORM:
+
+python manage.py shell
+
+from django.contrib.auth.models import User
+
+u = User.objects.get(username='your_username')
+
+u.is_superuser = True
+
+u.save()
+
+
+3) Наделить его полномочиями суперпользователя.
 Можно через БД, поставить true для полей: is_superuser, is_staff, is_active.
+
+Таким образом, можно протестировать загруженные фикстуры через http://localhost:8000/admin/
