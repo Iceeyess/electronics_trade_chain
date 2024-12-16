@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(help_text='Название компании', max_length=250)),
                 ('supplier_ending_balance', models.FloatField(default=0, verbose_name='задолженность перед поставщиком')),
-                ('creation_date', models.TimeField(auto_now_add=True, verbose_name='дата создания')),
+                ('creation_time', models.TimeField(auto_now_add=True, verbose_name='дата создания')),
                 ('contact', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='trade.contact', verbose_name='ссылка на контакты')),
                 ('supplier', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='trade.tradecompany', verbose_name='поставщик')),
             ],
